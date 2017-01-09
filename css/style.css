@@ -1,0 +1,362 @@
+* {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+body {
+  min-width: 600px;
+  background: #3fddff;
+}
+body h1, body h2, body h3 {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #3fddff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container h1, .container h2 {
+  margin: 0px auto;
+}
+.container h1 {
+  margin-top: 15px;
+}
+
+.coffee-machine {
+  height: 650px;
+  min-height: 650px;
+  width: 500px;
+  margin: 25px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+}
+
+.top, .bottom {
+  margin: 0 auto;
+}
+
+.top {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  z-index: 100;
+  background: #414242;
+  box-shadow: 0px 15px 15px 0px;
+}
+.top .middle-section {
+  box-sizing: border-box;
+  background: #22586e;
+  margin: 0 auto;
+  width: 70px;
+  height: 150px;
+  border: 5px solid #22586e;
+  border-radius: 25% 25% 5px 5px;
+  text-align: center;
+  position: relative;
+  top: 25px;
+  cursor: pointer;
+  box-shadow: 0px 3px 3px 0px;
+}
+.top .middle-section h3 {
+  position: relative;
+  top: 40px;
+}
+.top .middle-section .led {
+  width: 15px;
+  height: 15px;
+  background: #89ff76;
+  opacity: 0.5;
+  position: relative;
+  bottom: -50px;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+.top .middle-section .led.active {
+  opacity: 1;
+  background: #89ff76;
+  -webkit-animation: led 1s;
+          animation: led 1s;
+  -webkit-animation-iteration-count: 3;
+          animation-iteration-count: 3;
+}
+.top .middle-section:hover {
+  border: 5px solid #65819b;
+  box-shadow: 0px 0px 0px 0px;
+}
+.top .middle-section.active {
+  box-shadow: inset 0px 0px 1px 1px;
+}
+.top .pour-section {
+  width: 75px;
+  height: 15px;
+  background: gray;
+  position: relative;
+  border-radius: 0 0 10px 10px;
+  bottom: -90px;
+  margin: 0 auto;
+  z-index: 100;
+  border-bottom: 3px solid white;
+  box-shadow: 0px 10px 15px 0px;
+}
+.top .pour-section .drop {
+  width: 15px;
+  height: 0px;
+  background: rgba(56, 39, 29, 0.8);
+  position: relative;
+  left: 30px;
+  top: 15px;
+  opacity: 0;
+}
+.top .pour-section .drop.active {
+  -webkit-animation: drop 5s ease-in-out;
+          animation: drop 5s ease-in-out;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.bottom {
+  width: 350px;
+  height: 485px;
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 75px;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.bottom .side {
+  width: 200px;
+  height: 485px;
+  background: #272828;
+  border-radius: 50%;
+}
+
+.middle {
+  background: #2c2d2d;
+  width: 250px;
+  height: 430px;
+  position: absolute;
+  bottom: 25px;
+  left: 126px;
+  -webkit-transform-origin: bottom bottom;
+          transform-origin: bottom bottom;
+  border-radius: 50% 50% 0 0;
+  border: 2px solid gray;
+  box-sizing: border-box;
+}
+.middle .bottom {
+  width: 252px;
+  height: 45px;
+  background: #161616;
+  position: absolute;
+  left: -2px;
+  bottom: -38px;
+  border-radius: 0 0 50% 50%;
+}
+.middle .bottom .circle {
+  width: 252px;
+  height: 100px;
+  background: #1e1f1f;
+  -webkit-transform: rotatex(50deg);
+          transform: rotatex(50deg);
+  position: absolute;
+  top: -48px;
+  right: 0;
+  border-radius: 50%;
+}
+
+/*
+*
+*
+*
+*/
+.cup {
+  width: 200px;
+  height: 250px;
+  background: rgba(232, 238, 240, 0.1);
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  left: 1500px;
+  border: 5px solid rgba(232, 238, 240, 0.2);
+  box-sizing: border-box;
+  border-radius: 10px 10px 5px 5px;
+}
+.cup .handle {
+  width: 40px;
+  height: 70px;
+  border: 5px solid rgba(232, 238, 240, 0.5);
+  box-sizing: border-box;
+  left: 192px;
+  top: 50px;
+  position: absolute;
+  border-radius: 5px;
+}
+.cup .coffee {
+  width: 100%;
+  height: 0px;
+  background: #38271d;
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+}
+.cup .coffee.active {
+  opacity: 1;
+  -webkit-animation: coffee 3s ease-in;
+          animation: coffee 3s ease-in;
+  -webkit-animation-delay: 3.5s;
+          animation-delay: 3.5s;
+}
+.cup .coffee.full {
+  height: 205px;
+  border-top: 20px solid #6a4a37;
+  border-radius: 3px 3px 0 0;
+}
+
+.cup.active {
+  left: 150px;
+}
+
+/*
+*
+*Animations
+*
+*/
+@-webkit-keyframes led {
+  0%, 50%, 100% {
+    opacity: 0.5;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+@keyframes led {
+  0%, 50%, 100% {
+    opacity: 0.5;
+  }
+  25%, 75% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes drop {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15%,65% {
+    height: 370px;
+    opacity: 1;
+  }
+  45% {
+    width: 15px;
+  }
+  50% {
+    left: 32.5px;
+  }
+  55% {
+    left: 30.5px;
+  }
+  60% {
+    left: 35px;
+  }
+  75% {
+    left: 33px;
+  }
+  80%,100% {
+    width: 0;
+    opacity: 1;
+  }
+}
+@keyframes drop {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  15%,65% {
+    height: 370px;
+    opacity: 1;
+  }
+  45% {
+    width: 15px;
+  }
+  50% {
+    left: 32.5px;
+  }
+  55% {
+    left: 30.5px;
+  }
+  60% {
+    left: 35px;
+  }
+  75% {
+    left: 33px;
+  }
+  80%,100% {
+    width: 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes coffee {
+  0% {
+    opacity: 1;
+    height: 0;
+    border-top: 0px solid #38271d;
+    background: #211711;
+  }
+  100% {
+    opacity: 1;
+    height: 205px;
+    border-top: 20px solid #6a4a37;
+  }
+}
+@keyframes coffee {
+  0% {
+    opacity: 1;
+    height: 0;
+    border-top: 0px solid #38271d;
+    background: #211711;
+  }
+  100% {
+    opacity: 1;
+    height: 205px;
+    border-top: 20px solid #6a4a37;
+  }
+}
